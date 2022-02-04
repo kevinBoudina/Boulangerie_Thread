@@ -17,7 +17,7 @@ public class StartBoulangerClient {
 
         Client client = new Client();
 
-        Thread[] boulangers = new Thread[8];
+        Thread[] boulangers = new Thread[5];
         Thread[] clients = new Thread[2];
 
         for (int i = 0; i < boulangers.length; i++) {

@@ -10,7 +10,7 @@ public class Boulanger implements Runnable{
         try {
             while (!Boulangerie.ferme()) {
 
-                Thread.sleep(2000) ;
+                Thread.sleep(1000) ;
                 boolean added = Boulangerie.depose(new Pain()) ;
 
                 if (added) {
