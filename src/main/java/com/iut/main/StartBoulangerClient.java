@@ -17,25 +17,21 @@ public class StartBoulangerClient {
 
         Client client = new Client();
 
-        Thread[] boulangers = new Thread[5];
+        Thread[] boulangers = new Thread[8];
         Thread[] clients = new Thread[2];
 
-        // préparation des boulangers
         for (int i = 0; i < boulangers.length; i++) {
             boulangers[i] = new Thread(boulanger);
         }
 
-        // préparation des clients
         for (int i = 0; i < clients.length; i++) {
             clients[i] = new Thread(client);
         }
 
-        // lancement des boulangers
         for (int i = 0; i < boulangers.length; i++) {
             boulangers[i].start();
         }
 
-        // lancement des clients
         for (int i = 0; i < clients.length; i++) {
             clients[i].start();
         }
@@ -45,13 +41,10 @@ public class StartBoulangerClient {
         }  catch (InterruptedException e) {
         }
 
-        // arrêt de notre système
         for (int i =  0 ; i < boulangers.length ; i++) {
-            // interruption des boulangers
             boulangers[i].interrupt() ;
         }
 
-        // dépôt des pains empoisonnées
         for (int i =  0 ; i < clients.length ; i++) {
             boulangerie.deposePainEmpoisonne() ;
         }

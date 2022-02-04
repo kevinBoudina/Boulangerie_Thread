@@ -21,16 +21,14 @@ public class Client implements Runnable {
                         Thread.currentThread().interrupt() ;
                     } else {
 
-                        System.out.println("[" + Thread.currentThread().getName() + "]" +
-                                "[" + Boulangerie.getStock() + "] j'achete un pain : " + Boulangerie.getStock());
+                        System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + Boulangerie.getStock() + "] j'achete un pain : " + Boulangerie.getStock());
                     }
                 }  else {
-                    System.out.println("[" + Thread.currentThread().getName() +  "]" +
-                            "[" + Boulangerie.getStock() +  "] j'attend un pain") ;
+                    System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + Boulangerie.getStock() +  "] j'attend un pain") ;
                 }
             }
         }  catch (InterruptedException e) {
-            System.out.println("[" + Thread.currentThread().getName() +  "] je m'arrête") ;
+            System.out.println("[" + Thread.currentThread().getName() +  "] interrupt") ;
         }
         System.out.println("Boulangerie fermée");
     }
